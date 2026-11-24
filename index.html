@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Grasshopper Workshop: free video course in Bangla</title>
+  <meta name="description" content="A free, self-paced video course on Rhino and Grasshopper, taught in Bangla by Shafiul Islam. Follow the lessons in order, keep notes and pick up where you left off.">
+  <meta name="author" content="Shafiul Islam">
+  <meta name="theme-color" content="#F1F1EF">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="canonical" href="https://shafiarch.github.io/grasshopper_course/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Grasshopper Workshop">
+  <meta property="og:title" content="Grasshopper Workshop: free video course in Bangla">
+  <meta property="og:description" content="Video lessons on Rhino and Grasshopper by Shafiul Islam, from the interface to a diagrid structure.">
+  <meta property="og:url" content="https://shafiarch.github.io/grasshopper_course/">
+  <meta property="og:image" content="https://shafiarch.github.io/grasshopper_course/assets/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preload" href="assets/fonts/archivo-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/style.css">
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('grasshopper_course:theme');
+        if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t);
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="#/">
+        <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true" focusable="false">
+          <rect class="bm-body" x="7" y="9" width="18" height="14" rx="3.5"/>
+          <circle class="bm-nub" cx="7" cy="16" r="3"/>
+          <circle class="bm-nub" cx="25" cy="16" r="3"/>
+        </svg>
+        <span class="brand-name" id="brand-name">Grasshopper Workshop</span>
+      </a>
+      <nav class="nav" aria-label="Main">
+        <a href="#/" data-nav="home">Course</a>
+        <a href="#/progress" data-nav="progress">My progress</a>
+        <button class="icon-btn" id="theme-toggle" type="button" aria-label="Switch theme"></button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1">
+    <div id="app">
+      <noscript>
+        <div class="wrap noscript">
+          <h1>Grasshopper Workshop</h1>
+          <p>This course site needs JavaScript to show the lessons and save your progress. You can also watch every lesson in the <a href="https://www.youtube.com/playlist?list=PLOYhAlTvbgcPsxvQGb6rHEHhhsagSbkl0">YouTube playlist</a>.</p>
+        </div>
+      </noscript>
+    </div>
+  </main>
+
+  <footer class="site-footer" id="site-footer"></footer>
+
+  <div class="toast-region" id="toasts" aria-live="polite" aria-atomic="false"></div>
+  <dialog class="dialog" id="dialog"></dialog>
+
+  <script src="course.js"></script>
+  <script src="assets/app.js"></script>
+</body>
+</html>

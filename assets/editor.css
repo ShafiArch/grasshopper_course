@@ -1,0 +1,122 @@
+/* Course editor styles (editor.html). Builds on style.css. */
+
+.editor { padding-block: 2rem 5rem; max-width: 1000px; }
+
+.ed-intro { padding: 1.3rem 1.5rem 1.4rem; }
+.ed-intro h1 { margin-bottom: 0.8rem; font-size: clamp(1.75rem, 4vw, 2.4rem); font-weight: 800; font-stretch: 118%; letter-spacing: -0.015em; }
+.ed-steps { margin: 0 0 0.8rem; padding-left: 1.3rem; }
+.ed-steps li { margin: 0.35rem 0; line-height: 1.5; }
+
+.ed-bar {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6rem;
+  margin-top: 1.5rem;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--rule);
+  background: var(--paper);
+}
+.ed-status { flex: 1 1 16rem; font-size: 0.9375rem; color: var(--ink-2); }
+.ed-status.is-changed { color: var(--ink); font-weight: 600; }
+
+.ed-section { margin-top: 2.75rem; }
+.ed-section-head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 0.75rem 1rem; margin-bottom: 0.6rem; }
+.ed-section h2 { font-size: 1.5rem; font-stretch: 115%; letter-spacing: -0.01em; }
+.ed-hint { margin: 0 0 1rem; max-width: 46rem; color: var(--ink-3); font-size: 0.9375rem; }
+
+.ed-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem 1.25rem; margin-top: 1rem; }
+.ed-field { display: grid; gap: 0.3rem; align-content: start; font-size: 0.875rem; font-weight: 600; }
+.ed-field.wide { grid-column: 1 / -1; }
+.ed-field small { font-weight: 400; color: var(--ink-3); }
+
+.editor input[type="text"],
+.editor input[type="url"],
+.editor textarea,
+.editor select {
+  width: 100%;
+  padding: 0.5rem 0.65rem;
+  border: 1.5px solid var(--outline);
+  border-radius: 4px;
+  background: var(--field);
+  color: var(--ink);
+  font-size: 0.9375rem;
+  font-weight: 400;
+  line-height: 1.4;
+}
+.editor textarea { min-height: 4.75rem; resize: vertical; }
+.editor input:focus-visible,
+.editor textarea:focus-visible,
+.editor select:focus-visible { outline: none; border-color: var(--ink); box-shadow: 0 0 0 1.5px var(--ink); }
+.editor .is-invalid { border-color: var(--danger) !important; box-shadow: 0 0 0 1.5px var(--danger); }
+
+.ed-module {
+  margin-top: 1.25rem;
+  padding: 1rem;
+  border: 1.5px solid var(--outline);
+  border-radius: var(--radius);
+  background: color-mix(in srgb, var(--canvas) 55%, var(--paper));
+}
+.ed-module-head { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; gap: 0.75rem; }
+.ed-module-num { font-weight: 700; font-stretch: 105%; white-space: nowrap; }
+.ed-module-summary { margin-top: 0.6rem; }
+.ed-actions { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+.ed-actions .btn { min-height: 34px; padding: 0.25rem 0.6rem; font-size: 0.8125rem; }
+
+.ed-lessons { display: grid; gap: 0.75rem; margin: 1rem 0 0; padding: 0; list-style: none; }
+.ed-lesson {
+  display: grid;
+  grid-template-columns: 2.4rem 7.5rem minmax(0, 1fr);
+  gap: 0.9rem;
+  align-items: start;
+  padding: 0.85rem;
+  border: 1.5px solid var(--outline);
+  border-radius: var(--radius);
+  background: var(--paper);
+  box-shadow: var(--shadow);
+}
+.ed-num { padding-top: 1.6rem; font-weight: 700; font-variant-numeric: tabular-nums; }
+.ed-thumb { width: 100%; margin-top: 1.55rem; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 4px; background: var(--component-dark); }
+.ed-fields { display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 1.2fr) minmax(0, 0.8fr); gap: 0.65rem 0.8rem; }
+.ed-fields .span-2 { grid-column: span 2; }
+.ed-fields .full { grid-column: 1 / -1; }
+.ed-more { grid-column: 1 / -1; }
+.ed-more > summary { cursor: pointer; font-size: 0.875rem; font-weight: 600; color: var(--ink-2); }
+.ed-more[open] > summary { margin-bottom: 0.6rem; }
+.ed-more .ed-field + .ed-field { margin-top: 0.6rem; }
+.ed-lesson-foot { grid-column: 1 / -1; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0.5rem 1rem; }
+.ed-lesson-foot select { width: auto; min-height: 34px; padding-block: 0.25rem; font-size: 0.8125rem; }
+.ed-note { font-size: 0.8125rem; color: var(--ink-3); }
+.ed-note.is-error { color: var(--danger); font-weight: 600; }
+
+.ed-add { display: flex; gap: 0.6rem; margin-top: 1rem; }
+.ed-add input { flex: 1; }
+.ed-add-module { margin-top: 1.25rem; }
+
+.ed-empty { padding: 0.9rem; border: 1.5px dashed var(--ink-3); border-radius: var(--radius); color: var(--ink-3); }
+
+#probe {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  width: 320px;
+  height: 200px;
+  overflow: hidden;
+  opacity: 0.01;
+  pointer-events: none;
+}
+
+@media (max-width: 760px) {
+  .ed-grid { grid-template-columns: minmax(0, 1fr); }
+  .ed-lesson { grid-template-columns: 2rem minmax(0, 1fr); }
+  .ed-thumb { display: none; }
+  .ed-num { padding-top: 0.35rem; }
+  .ed-fields { grid-template-columns: minmax(0, 1fr); }
+  .ed-fields .span-2 { grid-column: auto; }
+  .ed-module-head { grid-template-columns: minmax(0, 1fr); }
+  .ed-add { flex-direction: column; }
+}
